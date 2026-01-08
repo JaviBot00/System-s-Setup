@@ -1,0 +1,35 @@
+## Crear llaves SSH con clave y subir a GitHub la pub
+## Clave pri (rw- --- ---) 600
+## Clave pub (rw- r-- r--) 644
+
+
+nano /etc/ssh/ssh_config
+Host github.com
+        User git
+        Hostname github.com
+        IdentityFile /home/hotguy/.ssh/github
+
+
+nano /home/hotguy/.allowed_signers
+javibot00@gmail.com (clave pub)
+
+$ git config --global user.name "HotGuy"
+$ git config --global user.email javibot00@gmail.com
+
+nano /home/hotguy/.gitconfig
+[user]
+        name = HotGuy
+        email = javibot00@gmail.com
+        signingkey = /home/hotguy/.ssh/github.pub
+[commit]
+        gpgsign = true
+[gpg]
+        format = ssh
+        program = gpg
+[gpg "ssh"]
+        allowedSignersFile = /home/hotguy/.allowed_signers
+[core]
+        autocrlf = true
+        hooksPath = D:/_MisCosas/git-hooks
+[init]
+        defaultBranch = master
