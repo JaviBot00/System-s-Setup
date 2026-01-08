@@ -1,0 +1,10 @@
+Bienvenido al BatOrdnador de
+
+  ___ ___         __     ________              
+ /   |   \  _____/  |_  /  _____/ __ __ ___.__.
+/    ~    \/  _ \   __\/   \  ___|  |  <   |  |
+\    Y    (  <_> )  |  \    \_\  \  |  /\___  |
+ \___|_  / \____/|__|   \______  /____/ / ____|
+       \/                      \/       \/     
+
+Está Prohibida la Conexión si no eres Administrador de este Sistema
