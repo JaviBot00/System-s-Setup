@@ -1,0 +1,68 @@
+nano /etc/netplan/00-installer-config.yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens33:
+      dhcp4: false
+      dhcp6: false
+      addresses: [192.168.2.111/24]
+      gateway4: 192.168.2.1
+      nameservers:
+         addresses: [8.8.8.8,8.8.4.4]
+
+nano /etc/netplan/00-installer-config.yaml  (Ubuntu 22+)
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    ens33:
+      dhcp4: false
+      dhcp6: false
+      addresses: [192.168.2.195/24]
+      routes:
+      - to: default
+        via: 192.168.2.2  (NAT VmWare)
+      nameservers:
+        addresses: [8.8.8.8,8.8.4.4]
+
+network:
+    ethernets:
+        ens33:
+            addresses:
+            - 192.168.2.69/24
+            nameservers:
+                addresses:
+                - 8.8.8.8
+                - 8.8.4.4
+                search: []
+            routes:
+            -   to: default
+                via: 192.168.2.2
+    version: 2
+
+
+nano /etc/network/interfaces
+ # This file describes the network interfaces available on your system
+ # and how to activate them. For more information, see interfaces(5).
+ 
+ source /etc/network/interfaces.d/*
+ 
+ # The loopback network interface
+ auto lo
+ iface lo inet loopback
+
+ # The primary network interface
+ auto ens33
+ allow-hotplug ens33
+ #iface ens33 inet dhcp
+
+ # Static IP address
+ auto ens33
+ iface ens33 inet static
+        address 192.168.2.209
+        netmask 255.255.255.0
+        gateway 192.168.2.1
+        network 192.168.2.0
+        broadcast 192.168.2.255
+        dns-nameserver 192.168.2.1
