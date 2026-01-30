@@ -1,4 +1,4 @@
-# ProTips - Setup Ubuntu
+# System's-Setup - Setup Ubuntu
 
 This repository contains scripts and instructions for setting up a fresh Ubuntu installation with recommended packages and configurations.
 
