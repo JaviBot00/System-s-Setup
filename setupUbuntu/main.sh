@@ -16,6 +16,9 @@ echo "==============================="
 echo "  SetUp Ubuntu 24 | 25 - MAIN"
 echo "==============================="
 
+# https://kskroyal.com/23-things-to-do-after-installing-ubuntu/
+echo "Para mas información visita: https://kskroyal.com/23-things-to-do-after-installing-ubuntu/"
+
 es_desktop() {
     if [[ -n "$(command -v gdm3)" || -n "$(command -v lightdm)" || -n "$(command -v sddm)" ]]; then
         return 0
