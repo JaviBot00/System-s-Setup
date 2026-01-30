@@ -4,9 +4,11 @@ valor="S"
 validate_number='^[0-9]+$'
 cPaquete="apt"
 
+clear
+
 fCambiarGestorPaquetes() {
     echo "Gestionar paquetes con actual: $cPaquete"
-    read -p "¿Cambiar el gestor de paquetes a Nala? [y/N]: " instalarNala  # Install Nala? [yN]
+    read -p "¿Cambiar el gestor de paquetes a Nala? [y/N]: " instalarNala
     if [[ "$instalarNala" =~ ^[YySs]$ ]]; then
         cPaquete="nala"
         echo "Gestor de paquetes cambiado a Nala"
@@ -15,14 +17,14 @@ fCambiarGestorPaquetes() {
 
 fInstalarNala() {
     echo "Gestionar paquetes con actual: $cPaquete"
-    read -p "¿Instalar Nala como gestor de paquetes? [y/N]: " instalarNala  # Install Nala? [yN]
+    read -p "¿Instalar Nala como gestor de paquetes? [y/N]: " instalarNala
     if [[ "$instalarNala" =~ ^[YySs]$ ]]; then
         sudo apt install nala
         clear
         echo "Ahora se ejecutará 'sudo nala fetch' para"
         echo "seleccionar los repositorios más rápidos."
         echo "Se recomienda elegir los repositorios del 1 al 6"
-        sleep 5
+        sleep 2
         sudo nala fetch
         cPaquete="nala"
     fi
@@ -90,6 +92,11 @@ fPaquetesInnecesarios() {
 fTerminar() {
     read -p "¿Terminar el SetUp? [y/N]: " seguir
     [[ "$seguir" =~ ^[YySs]$ ]] && valor="N"
+    echo "Bye!"
+    echo "See you later"
+    sleep 2
+    clear
+    exit 0
 }
 
 while [ "$valor" = "S" ]; do
@@ -108,35 +115,28 @@ while [ "$valor" = "S" ]; do
     [[ ! $opcion =~ $validate_number ]] && echo "Opción inválida" && sleep 1 && continue
 
     case $opcion in
-        01 | 1) fCambiarGestorPaquetes;;
+        01 | 1) fCambiarGestorPaquetes ;;
 
-        02 | 2) fInstalarNala;;
+        02 | 2) fInstalarNala ;;
 
-        03 | 3) fInstalarJava;;
+        03 | 3) fInstalarJava ;;
 
-        04 | 4) fInstalarPython;;
+        04 | 4) fInstalarPython ;;
 
-        05 | 5) fPaquetesUtiles;;
+        05 | 5) fPaquetesUtiles ;;
 
-        06 | 6) fPaquetesInnecesarios;;
+        06 | 6) fPaquetesInnecesarios ;;
         
-        07 | 7) fAjustarHora;;
+        07 | 7) fAjustarHora ;;
         
         98) break ;;
 
-        99)
-            fTerminar
-            echo "Bye!"
-            echo "See you later"
-            sleep 2
-            clear
-            exit 0
-            ;;
+        99) fTerminar ;;
 
         *)
-            clear
             echo "Operación no válida"
             sleep 2
+            clear
             ;;
     esac
 
