@@ -15,8 +15,8 @@ This repository contains scripts and instructions for setting up a fresh Ubuntu 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/JaviBot00/ProTips.git
-    cd ProTips/setupUbuntu
+   https://github.com/JaviBot00/System-s-Setup.git
+    cd System-s-Setup/setupUbuntu
     ```
 
 2. Make the main script executable:
@@ -61,4 +61,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For questions or suggestions, please open an issue on the [GitHub repository](https://github.com/JaviBot00/ProTips/issues).
+For questions or suggestions, please open an issue on the [GitHub repository](https://github.com/JaviBot00/System-s-Setup/issues).
