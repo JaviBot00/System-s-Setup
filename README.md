@@ -1,4 +1,4 @@
-# System's-Setup - Setup Ubuntu
+# DevUtils - Setup Ubuntu
 
 This repository contains scripts and instructions for setting up a fresh Ubuntu installation with recommended packages and configurations.
 
@@ -15,8 +15,8 @@ This repository contains scripts and instructions for setting up a fresh Ubuntu 
 1. Clone the repository:
 
    ```bash
-   https://github.com/JaviBot00/System-s-Setup.git
-    cd System-s-Setup/setupUbuntu
+   https://github.com/JaviBot00/DevUtils.git
+    cd DevUtils/setupUbuntu
     ```
 
 2. Make the main script executable:
@@ -54,11 +54,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Additional Resources
 
 - [Ubuntu Official Documentation](https://help.ubuntu.com/)
-- [ProTips GitHub Repository](https://github.com/yourusername/ProTips)
+- [DevUtils GitHub Repository](https://github.com/JaviBot00/DevUtils)
 - [Ubuntu Forums](https://ubuntuforums.org/)
 - [Ask Ubuntu](https://askubuntu.com/)
 - [Ubuntu Wiki](https://wiki.ubuntu.com/)
 
 ## Contact
 
-For questions or suggestions, please open an issue on the [GitHub repository](https://github.com/JaviBot00/System-s-Setup/issues).
+For questions or suggestions, please open an issue on the [GitHub repository](https://github.com/JaviBot00/DevUtils/issues).
